@@ -1,6 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+  padding:0;
+}
+
+body{
+background-color: #fff;
+background-image:
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;}
+
 .jumbotron{
   background: url("https://images.unsplash.com/photo-1471882108153-09c9b7452933?dpr=2&auto=compress,format&fit=crop&w=1199&h=1799&q=80&cs=tinysrgb&crop=") fixed center center;
   background-size: cover;
@@ -9,7 +21,7 @@
 
 
 
-.container{
+.overlay{
     margin-top:100px;
     padding:30px;
     background: rgba(0, 0, 0, 0.5);
@@ -17,3 +29,30 @@
     border-radius: 10px;
 
 }
+
+.layer{
+  background-color:rgba(0,0,0,0.4);
+  color:white;
+  width: auto;
+  height:250px;
+  margin-top: 20px;
+  padding: 7.5rem 1.6rem;
+  box-shadow: 0 3rem 5rem -2rem rgba(0,0,0,0.2);
+  border-left: 5px solid #398ae3;
+}
+
+
+
+/*
+.layer {
+  background-color: white;
+  width: 75%;
+  margin-top: 4rem;
+  padding: 7.5rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 3rem 5rem -2rem rgba(0, 0, 0, 0.2);
+}
+ */

@@ -1,9 +1,62 @@
 <div class="jumbotron">
-  <div class="container col-xs-10 col-xs-offset-1">
+  <div class="container overlay col-xs-10 col-xs-offset-1">
     <h1>This is my quiz#1 for firehoseproject</h1>
     <p class="pull-right">-kenneth Banico</p>
     <br>
     <p><a class="btn btn-default btn-lg" href="http://kenbanico.getforge.io/" role="button">My First Firehose Project</a></p>
   </div>
 
+
+
+</div>
+
+<div class="container">
+  <h1 class = "text-center">The Lastest Thoughts</h1>
+   <!-- Button trigger modal -->
+    <button type="button" class="pull-right btn btn-info" data-toggle="modal" data-target="#myModal">
+      Add a thought
+    </button>
+
+
+  <br><br>
+
+  <% @posts.each do |post| %>
+    <div class="col-xs-12 col-sm-4 text-center">
+      <div class="layer">
+        <h3><%= post.title %></h3>
+        <p><%= post.description %></p>
+      </div>
+
+    </div>
+  <% end %>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">What's On Your Mind?</h4>
+          </div>
+          <%= simple_form_for Post.new do |f| %>
+            <div class="modal-body">
+
+            <%= f.input :title, label: "Post title" %>
+            <%= f.input :description, label: "Post description" %>
+
+
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit "Create", class: "btn btn-success" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
 </div>
