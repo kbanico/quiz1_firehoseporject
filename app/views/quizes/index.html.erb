@@ -27,6 +27,9 @@
         <h3><%= post.title %></h3>
         <br>
         <p><%= post.description %></p>
+        <% if post.name.present? %>
+        <p class="post-name pull-right">-<%= post.name %></p>
+        <% end %>
       </div>
 
     </div>
@@ -50,6 +53,7 @@
 
             <%= f.input :title, label: "What's on your mind?", placeholder: "If you fart loudly in public" %>
             <%= f.input :description, label: "Your feelings about it?", placeholder: "Just yell, 'JET POWER!' and start walking faster " %>
+            <%= f.input :name, label: "Name", placeholder: "ken" %>
 
 
             </div>
@@ -65,7 +69,9 @@
 
 
   <div class="text-center">
-    <%= will_paginate @posts %>
+
+    <%= will_paginate @posts, :page_links => false %>
+
   </div>
 
 
