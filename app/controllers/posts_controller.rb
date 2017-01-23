@@ -8,8 +8,18 @@ class PostsController < ApplicationController
       flash[:success] = "The post was successfully created"
       redirect_to root_path
     else
-      flash[:danger] = "Sorry the post was not created please try again later"
-      redirect_to root_path
+      if @post.errors.any?
+        errors = ""
+        @post.errors.full_messages.each do |msg|
+          errors += "#{msg}<br>"
+        end
+
+        flash[:danger] = errors
+        redirect_to root_path
+
+      end
+      # flash[:danger] =
+      # redirect_to root_path
     end
   end
 
